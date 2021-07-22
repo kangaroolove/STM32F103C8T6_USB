@@ -22,20 +22,27 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
 #include <stdio.h>
+#include "usb_lib.h"
+#include "usb_pwr.h"
+#include "hw_config.h"
 
 void testGPIO(void);
 void initWWDG(void);
 
 int main()
 {
-
-	initWWDG();
+	Set_System();
+	USB_Interrupts_Config();
+	Set_USBClock();
+	USB_Init();
 	
-	while (1)
-	{
+	//initWWDG();
+	
+	
+	while (1);
+		
 		/* Update WWDG counter */
-    WWDG_SetCounter(127);
-	}
+	    //WWDG_SetCounter(127);
 }
 
 void initWWDG()
