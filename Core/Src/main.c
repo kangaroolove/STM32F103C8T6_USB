@@ -23,7 +23,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+extern USBD_HandleTypeDef hUsbDeviceFS;
+#include "usbd_customhid.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,6 +44,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+uint8_t tx_data[32] = "hello world\r\n";
+uint8_t rx_data[32];
 
 /* USER CODE END PV */
 
@@ -97,6 +101,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,tx_data,sizeof(tx_data));
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
