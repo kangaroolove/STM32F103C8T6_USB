@@ -45,7 +45,7 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 
 /* USER CODE BEGIN PV */
 
-uint8_t tx_data[32] = "hello world\r\n";
+uint8_t tx_data[32] = "hello world";
 uint8_t rx_data[32];
 
 /* USER CODE END PV */
@@ -102,6 +102,7 @@ int main(void)
     /* USER CODE END WHILE */
 
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,tx_data,sizeof(tx_data));
+		HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -62,10 +62,10 @@
   * @brief Private defines.
   * @{
   */
-#define USBD_VID     0x15B3
+#define USBD_VID     5555 //0x15b3
 #define USBD_LANGID_STRING     1033
 #define USBD_MANUFACTURER_STRING     "BV Information Tech"
-#define USBD_PID_FS     0x8847
+#define USBD_PID_FS     34887 //0x8847
 
 #define USBD_PRODUCT_STRING_FS     "BV Dental Camera"
 #define USBD_CONFIGURATION_STRING_FS     "Custom HID Config"
